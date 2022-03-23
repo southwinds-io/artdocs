@@ -1,0 +1,27 @@
+site_name: Artisan
+site_url: https://docs.artisan.gdn/
+site_author: southwinds.io
+site_description: Artisan documentation.
+copyright: Copyright &copy; 2022 <a href="https://www.southwinds.io">SouthWinds</a>. All rights reserved.
+
+repo_url: https://github.com/southwinds-io/artdocs/
+
+theme:
+  name: readthedocs
+#  custom_dir: 'cinder'
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+
+nav:
+  - Introduction: 'intro.md'
+  - The Build File: 'build_file.md'
+  - Packages: 'packages.md'
+  - Execution: 'execution.md'
+  - Flows: 'flows.md'
+  - Security: 'security.md'
+  - Specifications: 'specs.md'
+  - Applications: 'apps.md'
+  - Registries: 'registries.md'
+  - Runners: 'runners.md'

@@ -1,0 +1,18 @@
+---
+env:
+  REGISTRY: quay.io/southwinds
+  NAME: artdocs
+
+functions:
+  - name: build
+    description: build the docs container image
+    run:
+      - mkdocs build
+      - docker build -t ${REGISTRY}/${NAME} .
+
+  - name: start
+    description: start the docs container
+    run:
+      - docker run --name artdocs -dit -p 8080:80 ${REGISTRY}/${NAME}
+      - open -a /Applications/Firefox.app http://localhost:8080
+...
