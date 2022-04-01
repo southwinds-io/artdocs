@@ -1,18 +1,29 @@
 ---
 env:
-  REGISTRY: quay.io/southwinds
+  REGISTRY: registry.gitlab.com/xxx/sw-web
   NAME: artdocs
+  TAG: 1
 
 functions:
   - name: build
     description: build the docs container image
     run:
       - mkdocs build
-      - docker build -t ${REGISTRY}/${NAME} .
+      - docker build -t ${REGISTRY}/${NAME}:${TAG} .
+
+  - name: push
+    description: build the docs container image
+    run:
+      - docker push ${REGISTRY}/${NAME}:${TAG}
+
+  - name: release
+    run:
+      - $(build)
+      - $(push)
 
   - name: start
     description: start the docs container
     run:
-      - docker run --name artdocs -dit -p 8080:80 ${REGISTRY}/${NAME}
+      - docker run --name artdocs -dit -p 8080:80 ${REGISTRY}/${NAME}:${TAG}
       - open -a /Applications/Firefox.app http://localhost:8080
 ...

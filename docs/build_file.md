@@ -23,14 +23,13 @@ As the build file is not technology specific, it can be used to build any softwa
 
 | section | description |
 |---|---|
-| [*the function section*](#the-function-section)| describes the syntax for the functions section of the build file |
+| [*the functions section*](#the-function-section)| describes the syntax for the functions section of the build file |
 | [*the input section*](#the-input-section)| describes the syntax used to define inputs in a build file |
-| [*the profile section*]() | describes what are build profiles |
-| [*the env section*]() | describes how to define repeated configuration values in a single place |
-| [*the label section*]() | describes how to add labels to a manifest |
-| [*the miscelaneous items*]() | describes miscelaneous items in the build file |
+| [*the profiles section*](#the-profiles-section) | describes what are build profiles |
+| [*the env section*](#the-env-section) | describes how to define repeated configuration values in a single place |
+| [*the labels section*](#the-labels-section) | describes how to add labels to a manifest |
 
-## The *function* section
+## The *functions* section
 
 [ [go to the top](#the-build-file) ]
 
@@ -293,7 +292,7 @@ error!
 # 3. load the variable from an environment file (use the -e flag)
 ```
 
-## The *profile* section
+## The *profiles* section
 
 [ [go to the top](#the-build-file) ]
 
