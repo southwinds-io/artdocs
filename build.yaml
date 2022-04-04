@@ -1,6 +1,6 @@
 ---
 env:
-  REGISTRY: registry.gitlab.com/xxx/sw-web
+  REGISTRY: registry.gitlab.com/gatblau/sw-web
   NAME: artdocs
   TAG: 1
 
@@ -9,7 +9,9 @@ functions:
     description: build the docs container image
     run:
       - mkdocs build
+      - art open artisan . -s
       - docker build -t ${REGISTRY}/${NAME}:${TAG} .
+      - rm art
 
   - name: push
     description: build the docs container image
@@ -24,6 +26,6 @@ functions:
   - name: start
     description: start the docs container
     run:
-      - docker run --name artdocs -dit -p 8080:80 ${REGISTRY}/${NAME}:${TAG}
+      - docker run --name artdocs -dit -p 8080:8080 ${REGISTRY}/${NAME}:${TAG}
       - open -a /Applications/Firefox.app http://localhost:8080
 ...

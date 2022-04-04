@@ -517,3 +517,44 @@ eget mi proin sed libero enim sed.
 ## The *labels* section
 
 [ [go to the top](#the-build-file) ]
+
+Labels let you attach arbitrary metadata to _**Artisan**_ packages.
+
+Labels are added at the time a package is built. They cannot be modified after the initial creation; you need to rebuild the package to modify them.
+
+Labels are key value pairs defined in the build file as follows:
+
+```yaml
+---
+# labels defined at a global level
+labels:
+  author: southwinds.io
+  description:  artisan documentation
+
+profiles:
+  - name: doc
+    default: true
+    # additional labels for the profile
+    labels:
+      platform: linux
+    target: test
+...
+```
+
+Given a `./test/docs.md` file in a test folder with content like so:
+
+```markdown
+# this is the doc title
+
+this is the doc content
+```
+
+```bash
+# build the package
+$ art build -t test -p doc .
+
+# print the manifest
+$ art manifest test
+```
+
+Labels should be displayed in the output manifest.
