@@ -5,6 +5,7 @@ site_description: Artisan documentation.
 copyright: Copyright &copy; 2022 <a href="https://www.southwinds.io">SouthWinds</a>. All rights reserved.
 
 repo_url: https://github.com/southwinds-io/artdocs/
+edit_uri: edit/main/docs/
 
 theme:
   name: readthedocs
