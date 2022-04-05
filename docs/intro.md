@@ -22,21 +22,53 @@ It is the _**build and run system**_ for [Onix Configuration Manager](https://on
 [ [go to the top](#artisan) ]
 
 ___
-_Package any automation logic/tool so that it can be deployed and run anywhere, including far edge and air gaped networks._
+_Package any automation logic/tool so that it can be securely deployed and run anywhere, including far edge and air gaped networks:_
+
+  * wrap your automation scripts and tools in packages
+  * define the API (functions) that packages should make available to operators
+  * sign the package with your private key
+
 ___
-_Build enterprise libraries of reusable and composable automation that use disparate tools._
+_Build enterprise libraries of reusable and composable automation that use disparate tools:_
+
+  * push the packages to a registry (library)
+  * pull and run packages in hosts
+
 ___
-_Build CI/CD pipelines on plain hosts or Kubernetes._
+_Run automation in CI/CD pipelines on plain hosts or Kubernetes:_
+
+  * use a runner to run packages in a server side environment such as Kubernetes or an Operating System host
+
 ___
-_Trigger automation processes from well-known events suchs as S3 bucket uploads._
+_Trigger automation processes from well-known events suchs as S3 bucket uploads:_
+
+  * launch the runner process from an S3 upload webhook notification
+
 ___
-_Transfer complex enterprise applications securely to air gaped networks._
+_Transfer complex enterprise applications securely to air gaped networks:_
+
+  * wrap automation scripts and container images in _**Artisan**_ packages
+  * export the packages to tarbal files in an S3 service
+  * import the tarbal files from S3
+  * tag and push to registries in target network
+  
 ___
-_Create application deployment configurations for Docker and Kubernetes platforms._
+_Create application deployment configurations for Docker and Kubernetes platforms:_
+
+  * define service requirements in a service manifest
+  * aggregate one or more services in an application manifest
+  * produce application deployment scripts for different technologies (e.g. docker-compose, helm charts, etc)
+
 ___
-_Build and release complex enterprise applications._
+_Build and release complex enterprise applications:_
+
+  * add build and deployment logic to an _**Artisan**_ package
+  * execute in a pipeline or a control machine
+
 ___
-_Use different tool chains without installing them on a host._
+_Use different tool chains without installing them on a host:_
+
+  * run _**Artisan**_ functions in dedicated container runtimes
 
 
 ## Why Artisan?
@@ -54,7 +86,15 @@ In the context of [DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps,_Sh
 Although this is technologically possible, without a consistent set of standards and abstractions that guide the way logic and tools are packaged, distributed and consumed across a plethora of automation vendors, teams usually find themselves "reinventing the wheel" for every new project and have to manage more than one toolchain in different ways.
 
 !!! important ""
-      **_Artisan_** provides a standard approach to publish and consume automation (regardless of the tool selected), via **_Artisan_** packages and registries.
+      **_Artisan_** is specifically designed to package, distribute and execute disparate scripts and binaries in a standard and secure way.
+
+Artisan provides the means to:
+
+- Package disparate scripts into a single compact unit of work that is smaller than a docker image
+- Add a generic API to the package so that one or more functions can be defined and run, effectively turning a package into a mini application with one or more entry points
+- Run functions as a black box, both on a host and/or a standard container image (runtime)
+- Pull packages from well-known registries verifying package integrity and author identity
+- Hide the complexity of the tools and technologies behind functions so that operators do not need to understand the underlying technologies used within the package
 
 ## How Artisan packages compare to container images?
 

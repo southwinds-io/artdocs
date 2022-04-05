@@ -429,11 +429,10 @@ ART INFO: 20220331210233507-a6b5668a49
 
 [ [go to the top](#the-build-file) ]
 
-In same cases, it is useful to defined a variable that is derived from an input to the build file.
-This happens when one or more input values dictate the value of other variables and you want to automatically generate
-them so that there is no scope for error.
+In some cases, it is useful to define a variable that is derived from an input to the build file.
+This happens when one or more inputs dictate the value of variables that you use in your scripts and you want to automatically generate them so that there is no margin for error or code duplication.
 
-For example, you have an URI that should be generated from the value of an input.
+For example, consider the case where you have a URI that should be derived from the value of an input.
 
 Given the input `INPUT_VARIABLE`, then `DERIVED_VARIABLE` can be created in the `env` section of the build file as follows:
 
@@ -553,8 +552,6 @@ this is the doc content
 # build the package
 $ art build -t test -p doc .
 
-# print the manifest
-$ art manifest test
+# search for author in the package manifest
+$ art manifest test | grep author
 ```
-
-Labels should be displayed in the output manifest.
