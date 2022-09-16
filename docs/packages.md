@@ -17,15 +17,4 @@ using the `ls` command.
 A package offers a way of aggregating different I.T. resources, such as scripts, binaries and content files; to facilitate their 
 transfer and the execution of the logic inside them.
 
-## Types of Packages
-
-## Building a package
-
-## Running functions in a package
-
-## Package Manifests
-
-## Package Signatures
-
-## Integrity Checks
 

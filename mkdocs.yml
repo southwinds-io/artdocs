@@ -17,12 +17,7 @@ markdown_extensions:
 
 nav:
   - Introduction: 'intro.md'
+  - Installation: 'installation.md'
   - The Build File: 'build_file.md'
   - Packages: 'packages.md'
-  - Execution: 'execution.md'
-  - Flows: 'flows.md'
-  - Security: 'security.md'
-  - Specifications: 'specs.md'
-  - Applications: 'apps.md'
-  - Registries: 'registries.md'
-  - Runners: 'runners.md'
+  - Users: 'users.md'
