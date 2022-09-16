@@ -13,7 +13,7 @@ from SouthWinds Tech [here](https://packages.artisan.gdn){ target=_blank }.
 
 An automated shell script is provided to facilitate the installation on any flavour of Linux [here](https://packages.artisan.gdn/install/get.sh){target=_blank}.
 
-## Installing the Community Edition
+## Community Edition
 
 On the server where you want to install Artisan:
 
@@ -22,7 +22,7 @@ On the server where you want to install Artisan:
 $ curl -fsSL https://packages.artisan.gdn/install/get.sh | bash -s artisan_community
 ```
 
-## Installing the Enterprise Edition
+## Enterprise Edition
 
 On the server where you want to install Artisan:
 
@@ -31,8 +31,25 @@ On the server where you want to install Artisan:
 $ curl -fsSL https://packages.artisan.gdn/install/get.sh | bash -s artisan_enterprise
 ```
 
+### Enabling the network service 
+
+The installer also installs a network service called __artnet__.
+This service is responsible for listening for commands issued by other CLIs that have joined
+an Artisan network. If you need distributed CLI capabilities then the service must be started:
+
+```bash
+# start the network service
+$ sudo systemctl start artnet
+
+# check status
+$ sudo systemctl status artnet
+
+# check logs for the "artnet" unit
+$ sudo journalctl -u artnet
+```
+
 !!! note 
-    In contrast to Artisan Community edition, Artisan Enterprise can be freely installed, 
-    but it needs a license to run. If you want to activate Artisan Enterprise, read the [Users Section](users.md)
-    of this documentation.
+    _In contrast to Artisan Community edition, Artisan Enterprise needs a license to run. 
+    If you want to activate Artisan Enterprise, read the [Users Section](users.md)
+    of this documentation._
    
