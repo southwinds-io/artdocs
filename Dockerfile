@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 
-LABEL maintainer="skipper@southwinds.io"
+LABEL maintainer="SouthWinds Tech Ltd"
 
 ARG UNAME=artdocs
 
@@ -8,8 +8,7 @@ ENV UID=100000000
 ENV GID=100000000
 ENV APP_FOLDER=/site
 
-RUN microdnf update --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos --disableplugin=subscription-manager -y && \
-    microdnf install shadow-utils.x86_64 -y && \
+RUN microdnf install shadow-utils.x86_64 -y && \
     microdnf clean all && rm -rf /var/cache/yum && \
     groupadd -g $GID -o $UNAME && \
     # user home under /home/runtime

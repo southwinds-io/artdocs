@@ -1,6 +1,6 @@
 ---
 env:
-  REGISTRY: registry.gitlab.com/gatblau/sw-web
+  REGISTRY: registry.gitlab.com/southwinds/image
   NAME: artdocs
   TAG: 1
 
@@ -9,7 +9,7 @@ functions:
     description: build the docs container image
     run:
       - mkdocs build
-      - art open artisan . -s
+      - art open artisan
       - docker build -t ${REGISTRY}/${NAME}:${TAG} .
       - rm art
 
