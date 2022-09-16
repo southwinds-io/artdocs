@@ -8,8 +8,10 @@ functions:
   - name: build
     description: build the docs container image
     run:
+      - rm -rf site > dev/null
       - mkdocs build
       - art open artisan
+      - docker pull registry.access.redhat.com/ubi8/ubi-minimal
       - docker build -t ${REGISTRY}/${NAME}:${TAG} .
       - rm art
 
