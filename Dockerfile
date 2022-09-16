@@ -24,6 +24,6 @@ WORKDIR /site/
 # permissions on artisan CLI
 RUN chmod ug+x /usr/bin/art
 
-CMD ["sh", "-c", "art serve --default-root /intro -p 8080 /site"]
+CMD ["sh", "-c", "art u serve --default-root /intro -p 8080 /site"]
 
 USER $UNAME
