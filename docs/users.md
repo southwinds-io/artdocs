@@ -83,6 +83,11 @@ Make a safe copy of this information as it will be needed by the user to request
     If the user does not validate their email, within a short period of time, by clicking on the link sent, they will be automatically deleted
     and a new user will have to be created.
 
+
+!!! note
+    Depending on the configuration of your mail system, the verification email may go into your junk folder.
+
+
 ## Acquiring Identity Tokens
 
 To activate Artisan on a device, it is necessary to acquire a valid identity token.
@@ -117,14 +122,29 @@ $ art
 
 Any operation performed by Artisan will be done under the user owning the active token.
 
+## Token Expiration
+
+Tokens are set to expire after a number of days. By default, when requesting a token, its duration is set to 10 days.
+
+This can be changed using the `-x` flag in the  `art adm token new` command.
+
+Once a token has expired, Artisan automatically deactivates and cannot longer be used.
+
+## Renewing tokens
+
+A  token can be renewed at any time simply by requesting a new token.
+
+In the same way, the user under which Artisan is running can be changed  by requesting a new token for the intended user.
+
+
 ## Enabling the network service
 
 The Artisan installer also installs a network service called __artnet__.
 This service is responsible for listening for commands issued by other CLIs that have joined
 an Artisan network. If you need distributed CLI capabilities then the service must be started.
 
-!!! important ""
-    The network service can only be enabled if Artisan has been activated (i.e. has a valid id token).
+!!! important "Please Note"
+    The network service can only be started if Artisan has been activated (i.e. has a valid id token).
 
 In order to enable the network service do the following:
 
