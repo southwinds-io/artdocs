@@ -31,25 +31,12 @@ On the server where you want to install Artisan:
 $ curl -fsSL https://packages.artisan.gdn/install/get.sh | bash -s artisan_enterprise
 ```
 
-### Enabling the network service 
+### Creating users and tokens
 
-The installer also installs a network service called __artnet__.
-This service is responsible for listening for commands issued by other CLIs that have joined
-an Artisan network. If you need distributed CLI capabilities then the service must be started:
+Before the cli can be properly used, it needs to be activated: an identity token has to be requested by a registered user
+and installed locally. 
 
-```bash
-# start the network service
-$ sudo systemctl start artnet
+Once the token is set, Artisan Enterprise enables its full command list.
 
-# check status
-$ sudo systemctl status artnet
-
-# check logs for the "artnet" unit
-$ sudo journalctl -u artnet
-```
-
-!!! note 
-    _In contrast to Artisan Community edition, Artisan Enterprise needs a license to run. 
-    If you want to activate Artisan Enterprise, read the [Users Section](users.md)
-    of this documentation._
-   
+In order to activate Artisan Enterprise, follow the steps in the [Users Section](users.md)
+of this documentation.

@@ -116,3 +116,25 @@ $ art
 ```
 
 Any operation performed by Artisan will be done under the user owning the active token.
+
+## Enabling the network service
+
+The Artisan installer also installs a network service called __artnet__.
+This service is responsible for listening for commands issued by other CLIs that have joined
+an Artisan network. If you need distributed CLI capabilities then the service must be started.
+
+!!! important ""
+    The network service can only be enabled if Artisan has been activated (i.e. has a valid id token).
+
+In order to enable the network service do the following:
+
+```bash
+# start the network service
+$ sudo systemctl start artnet
+
+# check status
+$ sudo systemctl status artnet
+
+# check logs for the "artnet" unit
+$ sudo journalctl -u artnet
+```
