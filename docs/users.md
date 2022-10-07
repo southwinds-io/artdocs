@@ -47,7 +47,7 @@ $ art adm user new
        -p "HLCEDJBixjCuVlfuVxdtNQ2jsqUvYJetB6KsVc6WQInDv9Dx73"
 ```
 
-where: 
+where:
 
 - `r`: means the user should be allowed to run packages
 - `b`: means the user should be allowed to build packages (note: not all users build packages, for example an operational user for managing an endpoint would not normally build packages but just run them)
@@ -87,7 +87,6 @@ Make a safe copy of this information as it will be needed by the user to request
 !!! note
     Depending on the configuration of your mail system, the verification email may go into your junk folder.
 
-
 ## Acquiring Identity Tokens
 
 To activate Artisan on a device, it is necessary to acquire a valid identity token.
@@ -121,6 +120,24 @@ $ art
 ```
 
 Any operation performed by Artisan will be done under the user owning the active token.
+
+### Floating Tokens
+
+By default, the Identity Token is locked to the device that requested it, using the MAC address of its sprimary network interface.
+This is done from a security perspective to prevent an unauthorized user from copying the token store onto another device to activate artisan.
+
+However, there are cases where the MAC address on the device is dynamically allocated, for example, when a new user session is created. This is the case, for example, when using the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/).
+In these cases, the token is invalidated everytime the MAC address changes on the device, and a new token has to be requested.
+
+Alternatively, you can request a less secure, floating  token - i.e. not locked to the device, by using the `--float` flag as follows:
+
+```bash
+$ art adm token new 
+       --float \
+       -x 30 \ 
+       -e "bob.jenkins@example.com" \
+       -p "Y1RdwALjPC6mTlQL5CiFCqbbGKCJ9MxOYsnaXUwhmKYTCAbw25"
+```
 
 ## Token Expiration
 
