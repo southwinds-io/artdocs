@@ -175,3 +175,27 @@ $ sudo systemctl status artnet
 # check logs for the "artnet" unit
 $ sudo journalctl -u artnet
 ```
+
+### Network Service Configuration
+
+The network service consists of a [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) listener on port `40312`.
+
+To improve the resilisency and efficiency of the connections, the server uses [QUIC](https://en.wikipedia.org/wiki/QUIC), a transport layer network protocol, also used in [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
+
+The server implements [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) to encrypt the traffic between artisan clients and the server.
+
+#### Launching server on specific IP address
+
+It is possible to launch the server on a specific IP (as opposed to listening on all network interfaces) by passing the `--ip` flag to the following command located in the `arnet.service` systemd file:
+
+```bash
+$ art net serve --ip 127.0.0.1
+```
+
+#### Launching server in verbose mode
+
+In order to request verbose output from the server, launch it with the `--debug` flag, as follows:
+
+```bash
+$ art net serve --debug
+```
