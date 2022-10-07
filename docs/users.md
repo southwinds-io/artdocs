@@ -180,6 +180,9 @@ $ sudo journalctl -u artnet
 
 The network service consists of a [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) listener on port `40312`.
 
+!!! important
+    If you intend to use network functions, the device must have port `UDP/40312` open.
+
 To improve the resilisency and efficiency of the connections, the server uses [QUIC](https://en.wikipedia.org/wiki/QUIC), a transport layer network protocol, also used in [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
 
 The server implements [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) to encrypt the traffic between artisan clients and the server.
