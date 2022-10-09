@@ -41,7 +41,7 @@ The enterprise installer creates a new System User called `artisan` with `UID=55
 The `artisan` user has a home under `/opt/artisan/` where the local registry files will be located.
 
 !!! important "permissions to run"
-    In order to run artisan enterprise you must either be logged as the `artisan` user (recommended for procudtion scenarios), or be a member of the `artisan` group.
+    In order to run artisan enterprise you must either be logged as the `artisan` user (recommended for production scenarios), or be a member of the `artisan` group.
 
 #### Logging in as the artisan user (production)
 

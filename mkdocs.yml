@@ -21,5 +21,6 @@ nav:
   - The Build File: 'build_file.md'
   - Packages: 'packages.md'
   - Users: 'users.md'
+  - Network Service: 'network_service.md'
   - Registry: 'registry.md'
   - CLI eXtensions: 'extensions.md'
