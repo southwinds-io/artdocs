@@ -8,7 +8,7 @@ written in [Go](https://golang.org/); aiming to automate and integrate the effor
 _You can think of **Artisan** as a toolbox that solves complex problems faced by organisations when building, packaging,
 distributing and running software systems in modern platforms and heterogeneous networks._
 
-It is the _**build and run system**_ for [Onix Configuration Manager](https://onix.gatblau.org) that standardise and secure the complete lifecycle of:
+It is the _**build and run system**_ for [SouthWinds]([https://onix.gatblau.org](https://www.southwinds.io/)) that standardise and secure the complete lifecycle of:
 
 - Enterprise applications (e.g. micro-services on container platforms)
 - Disparate scripts (e.g. shell, ansible, terraform, etc)
